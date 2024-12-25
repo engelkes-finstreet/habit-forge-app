@@ -3,7 +3,7 @@ import "@/global.css";
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
+import { Redirect, Slot, Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
@@ -16,7 +16,7 @@ export {
 } from 'expo-router';
 
 export const unstable_settings = {
-  initialRouteName: 'index',
+  initialRouteName: 'info/index',
 };
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
@@ -52,9 +52,8 @@ function RootLayoutNav() {
   return (
     <GluestackUIProvider mode="light">
       <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack>
-          <Stack.Screen name="index" options={{ headerShown: false}} />
-        </Stack>
+        <Redirect href={"/info"} />
+        <Slot />
       </ThemeProvider>
       </GluestackUIProvider>
   );

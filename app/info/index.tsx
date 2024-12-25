@@ -1,18 +1,13 @@
-import { Heading } from "@/components/ui/heading";
 import { Text } from "@/components/ui/text"; 
+import { InfoHeader } from "@/features/info/components/InfoHeader";
 import { View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function HomeScreen() {
     return (
-        <SafeAreaView>
-            <View className={"h-[150px] bg-red-500 items-center justify-center"}>
-                <Text>
-                Hello World
-                </Text>
-            </View>
-            <View className={"flex-1 items-center justify-center"}>
-                <Heading size="2xl">Welcome to HabitForge</Heading>
+        <SafeAreaView> 
+            <InfoHeader heading={"Welcome to HabitForge"}/>
+            <View className={"p-4"}>
                 <Text>
                     Welcome! You’re about to discover a whole new way of creating positive change in your life, one step at a time. HabitForge was designed to help you build routines that last, by focusing on what truly matters: steady progress and genuine commitment.
                 </Text>
